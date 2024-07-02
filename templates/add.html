@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url('background.jpg');
+            background-size: cover;
+            background-color: rgba(0, 0, 0, 0.5); /* Adds a shaded overlay */
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .form-container {
+            width: 500px;
+            padding: 40px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: rgba(118, 70, 70, 0.5); /* Adds a semi-transparent white background */
+        }
+
+        .form-container h2 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        .form-container p {
+            text-align: center;
+            font-style: italic;
+            margin-bottom: 20px;
+        }
+
+        .form-container input[type="number"],
+        .form-container select,
+        .form-container input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-container input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .form-container input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+
+        .result {
+            margin-top: 30px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2>Welcome</h2>
+            <p>This is an application for calculating Arithmetic operations</p>
+            <form action="/" method="POST">
+                <input type="number" name="num1" placeholder="Number 1" required>
+                <input type="number" name="num2" placeholder="Number 2" required>
+                <select name="operation">
+                    <option value="add">Addition (+)</option>
+                    <option value="sub">Subtraction (-)</option>
+                    <option value="mul">Multiplication (*)</option>
+                    <option value="div">Division (/)</option>
+                </select>
+                <input type="submit" value="Calculate">
+            </form>
+            <div class="result">
+                {% if result %}
+                    Result: {{ result }}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>
